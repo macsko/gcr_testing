@@ -42,6 +42,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
+          provenance: false
           context: .
           push: true
           file: Dockerfile
@@ -55,4 +56,4 @@ jobs:
         with: 
           package-name: 'gcr_testing-app'
           package-type: 'container'
-          min-versions-to-keep: 3
+          min-versions-to-keep: 18
