@@ -54,6 +54,6 @@ jobs:
       - name: Cleanup old packages
         uses: actions/delete-package-versions@v4
         with: 
-          package-name: 'gcr_testing-app'
+          package-name: ${{ github.event.repository.name }}
           package-type: 'container'
           min-versions-to-keep: 18
