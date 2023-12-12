@@ -52,3 +52,11 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             BUILDKIT_CONTEXT_KEEP_GIT_DIR=true
+      
+      - name: Cleanup old packages
+        uses: docker://ghcr.io/doodlescheduling/gh-package-retention:v2.1.0
+        env:
+          PACKAGES: gcr_testing
+          PACKAGE_TYPE: container
+          AGE: 12h
+          GITHUB_TOKEN: ${{ secrets.PAT }}
