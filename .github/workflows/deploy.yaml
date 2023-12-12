@@ -60,4 +60,4 @@ jobs:
           account-type: personal
           keep-at-least: 5
           skip-tags: latest
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.CLASSIC_PAT }}
