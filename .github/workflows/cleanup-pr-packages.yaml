@@ -1,0 +1,25 @@
+name: Cleanup packages on closed pull request to master
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master
+
+jobs:
+  purge-image:
+    name: Delete image from ghcr.io
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cleanup packages
+        uses: snok/container-retention-policy@v2
+        with:
+          image-names: gcr_testing-app
+          cut-off: now UTC
+          timestamp-to-use: updated_at
+          account-type: personal
+          keep-at-least: 0
+          filter-tags: pr-${{github.event.pull_request.number}}
+          token: ${{ secrets.CLASSIC_PAT }}
+          dry-run: true
