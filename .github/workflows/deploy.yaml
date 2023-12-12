@@ -54,9 +54,9 @@ jobs:
       - name: Cleanup old packages
         uses: snok/container-retention-policy@v2
         with:
-          image-names: ${{ env.IMAGE_NAME }}
+          image-names: gcr_testing-app
           cut-off: two hours ago UTC
           timestamp-to-use: updated_at
           account-type: personal
-          keep-at-least: 2
+          keep-at-least: 3
           token: ${{ secrets.CLASSIC_PAT }}
