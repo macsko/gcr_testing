@@ -55,7 +55,7 @@ jobs:
         uses: snok/container-retention-policy@v2
         with:
           image-names: gcr_testing-app
-          cut-off: 15 minutes ago
+          cut-off: 15 minutes ago UTC
           timestamp-to-use: updated_at
           account-type: personal
           keep-at-least: 4
