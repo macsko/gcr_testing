@@ -42,7 +42,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          provenance: true
+          provenance: false
           context: .
           push: true
           file: Dockerfile
@@ -55,8 +55,9 @@ jobs:
         uses: snok/container-retention-policy@v2
         with:
           image-names: gcr_testing-app
-          cut-off: two hours ago UTC
+          cut-off: 15 minutes ago
           timestamp-to-use: updated_at
           account-type: personal
-          keep-at-least: 3
+          keep-at-least: 4
+          untagged-only: true
           token: ${{ secrets.CLASSIC_PAT }}
