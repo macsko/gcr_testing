@@ -64,4 +64,4 @@ jobs:
           keep-at-least: 5
           untagged-only: true
           token: ${{ secrets.CLASSIC_PAT }}
-          dry-run: true
+          # dry-run: true
