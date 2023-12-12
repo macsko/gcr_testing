@@ -60,4 +60,3 @@ jobs:
           account-type: personal
           keep-at-least: 2
           token: ${{ secrets.CLASSIC_PAT }}
-          dry-run: true
