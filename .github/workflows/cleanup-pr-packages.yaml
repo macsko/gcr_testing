@@ -8,8 +8,8 @@ on:
       - master
 
 jobs:
-  purge-image:
-    name: Delete image from ghcr.io
+  cleanup-packages:
+    name: Cleanup PR packages
     runs-on: ubuntu-latest
     steps:
       - name: Cleanup packages
