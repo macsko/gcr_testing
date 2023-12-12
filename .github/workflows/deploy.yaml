@@ -58,6 +58,6 @@ jobs:
           cut-off: two hours ago UTC
           timestamp-to-use: updated_at
           account-type: personal
-          keep-at-least: 5
+          keep-at-least: 2
           skip-tags: latest
           token: ${{ secrets.CLASSIC_PAT }}
