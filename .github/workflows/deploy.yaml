@@ -56,3 +56,4 @@ jobs:
           PACKAGES: gcr_testing
           PACKAGE_TYPE: container
           AGE: 12h
+          GITHUB_TOKEN: ${{ secrets.PAT }}
